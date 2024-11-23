@@ -31,6 +31,13 @@ async def tarih(ctx, member: discord.Member):
 async def heh(ctx, count_heh=5):
     """Kullanıcıya 'he' kelimesi belirtilen sayıda tekrar edilir. Varsayılan 5'tir."""
     await ctx.send("he" * count_heh)
+    
+@bot.command()
+async def tekrar(ctx, times: int, content='repeating...'):
+    """Repeats a message multiple times."""
+    for i in range(times):
+        await ctx.send(content)
+
 
 @bot.command()
 async def kullanıcıbilgi(ctx, member: discord.Member):
